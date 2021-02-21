@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TutanakDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BirimFiyatTbl">
+          <Key>
+            <PropertyRef Name="PozId" />
+          </Key>
+          <Property Name="PozId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PozNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cinsi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Birim" Type="nvarchar" MaxLength="10" />
+          <Property Name="MalzemeBirimFiyat" Type="float" />
+          <Property Name="IscilikBirimFiyat" Type="float" />
+        </EntityType>
+        <EntityContainer Name="TutanakDBModelStoreContainer">
+          <EntitySet Name="BirimFiyatTbl" EntityType="Self.BirimFiyatTbl" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TutanakDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BirimFiyatTbl">
+          <Key>
+            <PropertyRef Name="PozId" />
+          </Key>
+          <Property Name="PozId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PozNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cinsi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Birim" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MalzemeBirimFiyat" Type="Double" />
+          <Property Name="IscilikBirimFiyat" Type="Double" />
+        </EntityType>
+        <EntityContainer Name="TutanakDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BirimFiyatTbl" EntityType="Self.BirimFiyatTbl" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TutanakDBModelStoreContainer" CdmEntityContainer="TutanakDBEntities">
+          <EntitySetMapping Name="BirimFiyatTbl">
+            <EntityTypeMapping TypeName="TutanakDBModel.BirimFiyatTbl">
+              <MappingFragment StoreEntitySet="BirimFiyatTbl">
+                <ScalarProperty Name="PozId" ColumnName="PozId" />
+                <ScalarProperty Name="PozNo" ColumnName="PozNo" />
+                <ScalarProperty Name="Cinsi" ColumnName="Cinsi" />
+                <ScalarProperty Name="Birim" ColumnName="Birim" />
+                <ScalarProperty Name="MalzemeBirimFiyat" ColumnName="MalzemeBirimFiyat" />
+                <ScalarProperty Name="IscilikBirimFiyat" ColumnName="IscilikBirimFiyat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
